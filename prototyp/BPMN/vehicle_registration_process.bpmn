@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" id="Definition_VehicleRegistration" targetNamespace="http://vehiclecoin.com/bpmn">
+  <process id="VehicleRegistrationProcess" name="Eco-Friendly Vehicle Registration Process" isExecutable="true">
+    <startEvent id="StartEvent" name="User Registration Initiation"/>
+    <sequenceFlow id="flow1" sourceRef="StartEvent" targetRef="SubmitVehicleInfo"/>
+    <task id="SubmitVehicleInfo" name="Submit Vehicle Information"/>
+    <sequenceFlow id="flow2" sourceRef="SubmitVehicleInfo" targetRef="VehicleTypeValidation"/>
+    <task id="VehicleTypeValidation" name="Vehicle Type Validation"/>
+    <sequenceFlow id="flow3" sourceRef="VehicleTypeValidation" targetRef="SubmitDocuments"/>
+    <task id="SubmitDocuments" name="Document Submission"/>
+    <sequenceFlow id="flow4" sourceRef="SubmitDocuments" targetRef="DocumentVerification"/>
+    <task id="DocumentVerification" name="Document Verification"/>
+    <sequenceFlow id="flow5" sourceRef="DocumentVerification" targetRef="EligibilityCheck"/>
+    <task id="EligibilityCheck" name="Eligibility Check"/>
+    <sequenceFlow id="flow6" sourceRef="EligibilityCheck" targetRef="RewardActivation"/>
+    <task id="RewardActivation" name="Reward Activation"/>
+    <sequenceFlow id="flow7" sourceRef="RewardActivation" targetRef="NotifyUser"/>
+    <task id="NotifyUser" name="Confirmation Notification"/>
+    <sequenceFlow id="flow8" sourceRef="NotifyUser" targetRef="EndEvent"/>
+    <endEvent id="EndEvent"/>
+  </process>
+  
+  <bpmndi:BPMNDiagram id="BPMNDiagram_VehicleRegistration">
+    <bpmndi:BPMNPlane id="BPMNPlane_VehicleRegistration" bpmnElement="VehicleRegistrationProcess">
+      <bpmndi:BPMNShape id="StartEventShape" bpmnElement="StartEvent">
+        <omgdc:Bounds x="100" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubmitVehicleInfoShape" bpmnElement="SubmitVehicleInfo">
+        <omgdc:Bounds x="200" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="VehicleTypeValidationShape" bpmnElement="VehicleTypeValidation">
+        <omgdc:Bounds x="350" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubmitDocumentsShape" bpmnElement="SubmitDocuments">
+        <omgdc:Bounds x="500" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DocumentVerificationShape" bpmnElement="DocumentVerification">
+        <omgdc:Bounds x="650" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EligibilityCheckShape" bpmnElement="EligibilityCheck">
+        <omgdc:Bounds x="800" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RewardActivationShape" bpmnElement="RewardActivation">
+        <omgdc:Bounds x="950" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="NotifyUserShape" bpmnElement="NotifyUser">
+        <omgdc:Bounds x="1100" y="90" width="100" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEventShape" bpmnElement="EndEvent">
+        <omgdc:Bounds x="1250" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="flow1Edge" bpmnElement="flow1">
+        <omgdi:waypoint x="136" y="118"/>
+        <omgdi:waypoint x="200" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow2Edge" bpmnElement="flow2">
+        <omgdi:waypoint x="300" y="115"/>
+        <omgdi:waypoint x="350" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow3Edge" bpmnElement="flow3">
+        <omgdi:waypoint x="450" y="115"/>
+        <omgdi:waypoint x="500" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow4Edge" bpmnElement="flow4">
+        <omgdi:waypoint x="600" y="115"/>
+        <omgdi:waypoint x="650" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow5Edge" bpmnElement="flow5">
+        <omgdi:waypoint x="750" y="115"/>
+        <omgdi:waypoint x="800" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow6Edge" bpmnElement="flow6">
+        <omgdi:waypoint x="900" y="115"/>
+        <omgdi:waypoint x="950" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow7Edge" bpmnElement="flow7">
+        <omgdi:waypoint x="1050" y="115"/>
+        <omgdi:waypoint x="1100" y="115"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="flow8Edge" bpmnElement="flow8">
+        <omgdi:waypoint x="1200" y="115"/>
+        <omgdi:waypoint x="1250" y="118"/>
+      </bpmndi:BPMNEdge>
+      
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" id="Definition_VehicleRegistration" targetNamespace="http://vehiclecoin.com/bpmn">
+  <process id="EnhancedVehicleRegistrationProcess" name="Enhanced Eco-Friendly Vehicle Registration Process" isExecutable="true">
+    <startEvent id="StartEvent" name="User Registration Initiation"/>
+    <sequenceFlow id="flow1" sourceRef="StartEvent" targetRef="UserVerification"/>
+    
+    <task id="UserVerification" name="User Verification"/>
+    <sequenceFlow id="flow2" sourceRef="UserVerification" targetRef="SubmitVehicleInfo"/>
+
+    <task id="SubmitVehicleInfo" name="Submit Vehicle Information"/>
+    <sequenceFlow id="flow3" sourceRef="SubmitVehicleInfo" targetRef="VehicleTypeValidation"/>
+
+    <task id="VehicleTypeValidation" name="Vehicle Type Validation"/>
+    <sequenceFlow id="flow4" sourceRef="VehicleTypeValidation" targetRef="CheckBonusEligibility"/>
+
+    <task id="CheckBonusEligibility" name="Check Bonus Eligibility"/>
+    <sequenceFlow id="flow5" sourceRef="CheckBonusEligibility" targetRef="SubmitDocuments"/>
+
+    <task id="SubmitDocuments" name="Document Submission"/>
+    <sequenceFlow id="flow6" sourceRef="SubmitDocuments" targetRef="DocumentVerification"/>
+
+    <task id="DocumentVerification" name="Document Verification"/>
+    <sequenceFlow id="flow7" sourceRef="DocumentVerification" targetRef="MunicipalIncentivesReview"/>
+
+    <task id="MunicipalIncentivesReview" name="Municipal Incentives Review"/>
+    <sequenceFlow id="flow8" sourceRef="MunicipalIncentivesReview" targetRef="EligibilityCheck"/>
+
+    <task id="EligibilityCheck" name="Eligibility Check"/>
+    <sequenceFlow id="flow9" sourceRef="EligibilityCheck" targetRef="RewardActivation"/>
+
+    <task id="RewardActivation" name="Reward Activation"/>
+    <sequenceFlow id="flow10" sourceRef="RewardActivation" targetRef="NotifyUser"/>
+
+    <task id="NotifyUser" name="Confirmation Notification"/>
+    <sequenceFlow id="flow11" sourceRef="NotifyUser" targetRef="EndEvent"/>
+    
+    <endEvent id="EndEvent"/>
+  </process>
+</definitions>

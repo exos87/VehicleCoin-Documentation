@@ -1,0 +1,22 @@
+xml version=1.0 encoding=UTF-8
+definitions xmlns=httpwww.omg.orgspecBPMN20100524MODEL xmlnsbpmndi=httpwww.omg.orgspecBPMN20100524DI xmlnsomgdc=httpwww.omg.orgspecDD20100524DC xmlnsomgdi=httpwww.omg.orgspecDD20100524DI id=Definition_VehicleRegistration targetNamespace=httpvehiclecoin.combpmn
+  process id=VehicleRegistrationProcess name=Eco-Friendly Vehicle Registration Process isExecutable=true
+    startEvent id=StartEvent name=User Registration Initiation
+    sequenceFlow id=flow1 sourceRef=StartEvent targetRef=SubmitVehicleInfo
+    task id=SubmitVehicleInfo name=Submit Vehicle Information
+    sequenceFlow id=flow2 sourceRef=SubmitVehicleInfo targetRef=VehicleTypeValidation
+    task id=VehicleTypeValidation name=Vehicle Type Validation
+    sequenceFlow id=flow3 sourceRef=VehicleTypeValidation targetRef=SubmitDocuments
+    task id=SubmitDocuments name=Document Submission
+    sequenceFlow id=flow4 sourceRef=SubmitDocuments targetRef=DocumentVerification
+    task id=DocumentVerification name=Document Verification
+    sequenceFlow id=flow5 sourceRef=DocumentVerification targetRef=EligibilityCheck
+    task id=EligibilityCheck name=Eligibility Check
+    sequenceFlow id=flow6 sourceRef=EligibilityCheck targetRef=RewardActivation
+    task id=RewardActivation name=Reward Activation
+    sequenceFlow id=flow7 sourceRef=RewardActivation targetRef=NotifyUser
+    task id=NotifyUser name=Confirmation Notification
+    sequenceFlow id=flow8 sourceRef=NotifyUser targetRef=EndEvent
+    endEvent id=EndEvent
+  process
+definitions
